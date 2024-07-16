@@ -23,7 +23,7 @@ class WelcomeViewController: UIViewController {
 
     func titleLabelAnimation(){
         self.titleLabel.text = ""
-        let appName = "⚡️FlashChat"
+        let appName = K.appName
         var currentIndex = appName.startIndex
         Timer.scheduledTimer(withTimeInterval: 0.07, repeats: true) { timer in
             if(currentIndex == appName.endIndex) {

@@ -47,14 +47,14 @@ class LoginViewController: UIViewController {
                     self.present(alertController,animated: true,completion: nil)
                 }
                 else {
-                    self.performSegue(withIdentifier: "LoginToChat", sender: authResult?.user)
+                    self.performSegue(withIdentifier: K.loginSegue, sender: authResult?.user)
                 }
             }
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "LoginToChat" {
+        if segue.identifier == K.loginSegue {
             // Downcast destinationViewController to your specific type
             if let destinationVC = segue.destination as? ChatViewController {
                 // Pass data to the destination view controller

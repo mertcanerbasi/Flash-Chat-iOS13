@@ -46,7 +46,7 @@ class RegisterViewController: UIViewController {
                     self.present(alertController,animated: true,completion: nil)
                 }
                 else {
-                    self.performSegue(withIdentifier: "RegisterToChat", sender: authResult?.user)
+                    self.performSegue(withIdentifier: K.registerSegue, sender: authResult?.user)
                 }
             }
         }
@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RegisterToChat" {
+        if segue.identifier == K.registerSegue {
             // Downcast destinationViewController to your specific type
             if let destinationVC = segue.destination as? ChatViewController {
                 // Pass data to the destination view controller
