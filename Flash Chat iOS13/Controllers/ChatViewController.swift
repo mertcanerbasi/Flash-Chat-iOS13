@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChatViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
-    
+
+    var user : User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

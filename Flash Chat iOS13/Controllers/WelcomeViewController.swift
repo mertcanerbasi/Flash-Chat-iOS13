@@ -14,9 +14,27 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabelAnimation()
 
-       
+
+
     }
-    
+
+
+    func titleLabelAnimation(){
+        self.titleLabel.text = ""
+        let appName = "⚡️FlashChat"
+        var currentIndex = appName.startIndex
+        Timer.scheduledTimer(withTimeInterval: 0.07, repeats: true) { timer in
+            if(currentIndex == appName.endIndex) {
+                timer.invalidate()
+            }
+            else {
+                self.titleLabel.text?.append(appName[currentIndex])
+                currentIndex = appName.index(after: currentIndex)
+            }
+        }
+    }
+
 
 }
